@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Button, ButtonGroup, Divider } from '@chakra-ui/react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>
+      <ButtonGroup spacing={2} marginBottom={6}>
+        <Button colorScheme="blue">Add User</Button>
+      </ButtonGroup>
+      <div className="user-div">
+        <p>Mosh Hamedani</p>
+        <div>
+          <ButtonGroup spacing={5} marginBottom={6}>
+            <Button colorScheme="green" variant="outline">
+              Update
+            </Button>
+            <Button colorScheme="red">Delete</Button>
+          </ButtonGroup>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+      <Divider />
+    </>
+  );
 }
 
-export default App
+export default App;
